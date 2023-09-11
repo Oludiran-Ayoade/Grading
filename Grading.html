@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    body {
+      background: skyblue;
+    }
+    #grd {
+      color: #fff;
+      font-size: 25px;
+      border-radius: 20px;
+      width: 180px;
+      height: 150px;
+      margin: 80px 150px;
+      padding-left: 25px;
+      padding-top: 50px;
+    }
+    .grade {
+      background: hotpink;
+      border-radius: 20px;
+      margin: 200px 510px;
+      padding: 20px;
+      width: 500px;
+    }
+    input {
+      font-size: 20px;
+      padding-left: 20px;
+      margin-left: 100px;
+      margin-top: 50px;
+      width: 200px;
+      height: 50px;
+      border-radius: 10px;
+      border: none;
+    }
+    button {
+      font-weight: 600;
+      font-size: 20px;
+      font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+      color: teal;
+      width: 120px;
+      height: 50px;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+    }
+    h1 {
+      padding-left: 120px;
+      color: gainsboro;
+      font-size: 35px;
+    }
+  </style>
+  <body>
+    <div class="grade">
+      <h1>Grading System</h1>
+      <input id="inG" type="text" />
+      <button onclick="Grading()">Enter</button>
+      <h3 id="grd"></h3>
+    </div>
+  </body>
+
+  <script>
+    const inG = document.getElementById("inG");
+    const Num1 = document.getElementById("grd");
+
+    const Grading = () => {
+      const Num = Number(inG.value);
+      if (Num >= 70 && Num <= 100.0) {
+        Num1.innerHTML = ` ${Num} -  A, You Passed Excellently!`;
+        Num1.style.backgroundColor = "darkgreen";
+      } else if (Num >= 60 && Num <= 69) {
+        Num1.innerHTML = ` ${Num} -  B, Very Good You can do Better!`;
+        Num1.style.backgroundColor = "green";
+      } else if (Num >= 50 && Num <= 59) {
+        Num1.innerHTML = ` ${Num} -   C, You Had a Credit Score`;
+        Num1.style.backgroundColor = "yellowgreen";
+      } else if (Num >= 45 && Num <= 49) {
+        Num1.innerHTML = ` ${Num} -   D, Well that's a Pass`;
+        Num1.style.backgroundColor = "orange";
+      } else if (Num <= 44) {
+        Num1.innerHTML = ` ${Num} -  F, You Failed!!`;
+        Num1.style.backgroundColor = "red";
+      } else if (Num > 100) {
+        Num1.innerHTML = `${Num} is an Invalid Input`;
+        Num1.style.backgroundColor = "grey";
+      }
+    };
+  </script>
+</html>
